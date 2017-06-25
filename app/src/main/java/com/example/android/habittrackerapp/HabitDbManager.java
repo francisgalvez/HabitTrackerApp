@@ -29,6 +29,8 @@ public class HabitDbManager {
         values.put(HabitEntry.COLUMN_HABITS_NAME, "Listen to music");
         values.put(HabitEntry.COLUMN_HABITS_TIMES, 3);
 
+        db.insert(HabitEntry.TABLE_NAME, null, values);
+
         values.put(HabitEntry.COLUMN_HABITS_NAME, "Go running");
         values.put(HabitEntry.COLUMN_HABITS_TIMES, 1);
 
@@ -39,7 +41,7 @@ public class HabitDbManager {
         // this is set to "null", then the framework will not insert a row when
         // there are no values).
         // The third argument is the ContentValues object containing the info for Toto.
-        long newRowId = db.insert(HabitEntry.TABLE_NAME, null, values);
+        db.insert(HabitEntry.TABLE_NAME, null, values);
     }
 
     /**
